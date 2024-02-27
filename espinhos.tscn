@@ -1,31 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://caket7xi37anc"]
+[gd_scene load_steps=4 format=3 uid="uid://dsarghauimcqr"]
 
-[ext_resource type="Script" path="res://espinhos.gd" id="1_nvv1e"]
-[ext_resource type="Texture2D" uid="uid://bor2d141wqjrd" path="res://Art Assets/Art Assets/Hazards/Spikes.png" id="1_volqt"]
+[ext_resource type="Script" path="res://espinhos.gd" id="1_o7v0v"]
+[ext_resource type="Texture2D" uid="uid://bor2d141wqjrd" path="res://Art Assets/Art Assets/Hazards/Spikes.png" id="1_sw23w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_04o8k"]
-size = Vector2(48, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15wwf"]
 
-[node name="espinhos" type="Area2D"]
-script = ExtResource("1_nvv1e")
+[node name="Espinhos" type="Area2D"]
+script = ExtResource("1_o7v0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, -5)
-shape = SubResource("RectangleShape2D_04o8k")
+position = Vector2(23.5, 4)
+shape = SubResource("RectangleShape2D_15wwf")
 
-[node name="Spikes" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(0, -3)
-texture = ExtResource("1_volqt")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+texture = ExtResource("1_sw23w")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-16, 5)
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(39, 0)
+scale = Vector2(0.9375, 1)
+texture = ExtResource("1_sw23w")
 
-[node name="Spikes2" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-16, -3)
-texture = ExtResource("1_volqt")
-
-[node name="Spikes3" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(16, -3)
-texture = ExtResource("1_volqt")
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(24, 0)
+texture = ExtResource("1_sw23w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
