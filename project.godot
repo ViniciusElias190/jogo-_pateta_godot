@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Trabalho"
-run/main_scene="res://scenes/node_2d.tscn"
+config/name="Aula2.0"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Trabalho"
+project/assembly_name="Jumping Duck"
 
 [rendering]
 

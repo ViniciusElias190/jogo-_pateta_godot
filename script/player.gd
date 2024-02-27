@@ -1,19 +1,23 @@
 extends CharacterBody2D
 
-var grav = 10	
-var speed = 3000
+var grav = 10
+var speed = 300
+var force = 20
 
 func _process(delta):
-	if !is_on_floor():
+	if ! is_on_floor():
 		velocity.y += grav
-	if Input.is_action_just_pressed("ui_right"):
+	
+	if Input.is_action_pressed("ui_right"):
 		velocity.x = speed
 		$Sprite2D.flip_h = false
-	elif Input.is_action_just_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
 		$Sprite2D.flip_h = true
 	else:
 		velocity.x = 0
+		
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
-		velocity.y -=300
+		velocity.y -= 300
+	
 	move_and_slide()
